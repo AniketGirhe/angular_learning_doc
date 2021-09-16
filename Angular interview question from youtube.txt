@@ -1,0 +1,42 @@
+Interview Question on angular found on Youtube (https://www.youtube.com/watch?v=-jeoyDJDsSM&ab_channel=Questpond)
+1) What is angular and what is use of it?
+2) What is difference between Angular and Angular?
+3) What are directive in angular?
+4) Explain the different types of angular directive?
+5) Explain the importance of NPM and Node_Modules folder?
+6) Explain the importance of package.json file?
+7) What is typescript and why do we need it?
+8) Explain importance of angular CLI?
+9) Explain importance of Component and Modules?
+10) What is decorator in angular?
+11) What is Annotation or metadata?
+12) What are templates in angular?
+13) Explain the four types of data binding in Angular?
+14) Explain Architecture of angular?
+--> There are 7 important pillars in angular architecture
+	1) Template: The HTML view of angular
+	2) Component: Binds the view and model
+	3) Modules: Groups components logically
+	4) Bindings: Defines how view & components communicates
+	5) Directive: Changes the HTML DOM behavior
+	6) Services: Helps to share common logic across the project
+	7) DI: dependency injection helps to inject instance across constructor
+	
+15) What is dependency injection in angular, how to implement it and what are benefit of Dependency injection?
+16) What is SPA (Single page application)
+17) How to implement SPA in angular / What is routing in angular & how to implement it?
+--> To implement SPA we have to use angular routing
+18) Explain lazy loading and how to implement it?
+--> To achieve lazy loading we have to divide our project in different small modules
+--> Use "loadChildren" in routing to load module (It will load module only on demand)
+19) What are services in angular?
+--> Services helps you to share common logic across angular project
+20) Difference between "ng serve" and "ng build"?
+--> "ng serve" builds in memory while "ng build" builds on hard disk. So when you want to go for production "ng build" command is used
+21) Explain the --prod parameter in ng build?
+--> ng build --prod flag compresses your JS file, removes comments, crreate GUIDs of your JS file and make your application ready for production
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Interview Question on angular found on Youtube (https://www.youtube.com/watch?v=TDo--zM9Yrk&ab_channel=Questpond)
+1) Difference between constructor and ngOnInit()
+2) Angular life-cycle hooks
+3) 

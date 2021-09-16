@@ -1,0 +1,98 @@
+Angular Notes
+1) What is Angular?'
+--Angular is javascript framework which allows you to create reactive Single-Page-Application(SPA). i.e page loads only once in it's life cycle and after that only some particular portion of page loads not complete page
+
+2) Initial Command to start with angular
+	--> npm install -g @angular/cli (to install angular CLI globally)
+	--> ng new my-dream-app (To create new angular application)
+	--> cd my-dream-app 
+	--> ng serve (To start dev server)
+	
+3) What is typescript and what is Transpilation process
+	--> Typescript is superset of javascript it offers more features then javascript like class,interfaces, types
+	--> It is open source programming language developed by Microsoft
+	--> Typescript doesn't run in browser it compiles to javascript at the end hence this process is called as Transpilation
+
+4) What is component?
+	--> Component are key feature of angular
+	--> In angular App component is root component
+	--> Component allow you to split complex application into small reusable parts
+	--> One angular application has multiple component and each component having its own html,styling and business logic
+
+5) What is decorator?
+	--> Decorator are typescript feature which allow you enhance your classes
+	--> Below are some example of decorator
+	a)@Component (Use to create component)
+	    @Component({
+			selector: 'app-dashboard',
+			templateUrl: './dashboard.component.html',
+			styleUrls: ['./dashboard.component.css']
+		})
+
+6) What is module in angular? (Will go in deep dive later on)
+	--> Module is bundle of functionality of application basically gives idea to angular which feature are used in this module
+	
+7) What are different way to write selector in angular
+	1) By element (Normally used in application)
+	2) By Class name selector
+		a) In ts file write selector as
+			@Component({
+				selector: '.app-servers',
+				templateUrl: './servers.component.html',
+				styleUrls: ['./servers.component.css']
+			})
+		b) In HTML write selector as
+			<div class="app-servers"></div>
+	3) By attribute selector
+		a) In ts file write selector as
+			@Component({
+				selector: '[app-servers]',
+				templateUrl: './servers.component.html',
+				styleUrls: ['./servers.component.css']
+			})
+	    b) In HTML write selector as
+			<div app-servers></div>
+	Note: we can not write selector as id
+	
+8) What is data binding?
+	--> Data binding is nothing but communication between ts code(Business logic) and HTML
+	a) Output data:
+		--> String Interpolation ( {{data}} )
+		--> Property Binding ( [property]="data")
+	b) React to(User) event:
+		--> Event binding ( (event)="expression" )
+	c) Combination of both:
+		--> Two way data binding ( [(ngModel)]="data" )
+	
+9) What is string interpolation?
+	--> To disaply read only data on view template we can you string interpolation
+	--> Write property name in {{ propertyName }}
+	--> We can write method name which return string value as well in bracket
+		e.g. {{ getStringValue() }}
+		
+10)What are the way to write template expression (template expression we are writing in {{ }} )
+	a)we can right class variable in it
+		e.g {{headername}} headername in class variable
+	b)We can right mathematical expression
+		e.g {{3+5}}
+	c)We can call class function as well
+		e.g {{getFullName()}} getFullName() in function which return string of full name.
+
+11) What is property binding?
+	--> Property binding is use to bind some HTML property dynamically
+	--> To use property binding we enclosed HTNL element in square bracket []
+		e.g. <img [src]="imgUrl"> imgUrl is class variable
+		e.g <button class="btn btn-primary" [disabled]="!allowUser">Add User</button>
+		
+12) Property binding Vs String Interpolation
+	--> When we have to print simple text on UI dynamically then use string interpolation
+	--> When we have to bind any HTNL property like disabled,src,innterText dynamically then use property binding
+	
+13) What is event binding and how to use it?
+	--> Event binding is nothing but bind some HTML event to some method in ts file
+	--> In event binding flow data from HTML to typescript file
+	--> To use event binding we enclosed HTNL event in round bracket ()
+		e.g <button (click)="onClick()">Click me</button>
+		
+
+	

@@ -1,0 +1,47 @@
+Angular 2 Notes
+
+--Angular 2 main fetures
+1) Componants :- html & class
+2) Services :- only calls
+3) Decorators :- Metadata /conf
+4) Dirtective :- somtimes which affects the UI componant (Extention to html tags)
+5) Module: a registory
+
+
+--Importance of file on angular Project
+
+1) package.json:- overall project configuration(Metadata)
+2) Src(Folder):-Code Folder
+3) index.html:-main HTML Page
+4) main.ts:- this ts at start
+5) polyfills:-for backword compatibility
+6) styles:- global CSS   
+7) index.html(File)--> app(Folder)--> all componant:- 
+     index.html 
+	       app
+				all componants
+
+-- Subject obsevable used for auto update for parent to its respective childs.
+				
+				
+-- How to create component using CMD 
+   1) Stop execution on project using ctrl+c
+   2) run commnnd "ng g c 'componentname'"
+   
+-- How to create service using CMD 
+   1) Stop execution on project using ctrl+c
+   2) run commnnd "ng g s 'servicename'"
+		Steps for writtng the service :
+				A) import in app-module
+				B) providers[Sservice_name]
+				C) import injectable
+				D) @injectable()
+				E) constant ( 
+		
+
+--IMP Website Link
+1) https://angular.io/guide/quickstart
+2) https://fontawesome.com/icons/trash-alt?style=regular
+3) https://bootswatch.com/
+4) jsonplaceholder.typicode.com 
+https://github.com/jaydeepresources/angular-forms

@@ -1,0 +1,36 @@
+--Javascript and typescript
+	1)Basic function like (filter, map, forEatch.....) --need to google
+	2)Sync and async operators (understand) --need to google
+	3)Observabes and promises --will cover in video 
+	4)Clear understanding of variables like var, let, const (done)
+	5)Basic problem solving using plain javascript ----need to google
+--Angular
+	1)understand modules --will cover in video
+	2)understand and able to write component in angular --will cover in video
+	3)Able to write how all types of communication is possible with angular -- will cover in video
+	4)Change detenction in angular should know basic concept -- https://www.youtube.com/watch?v=SYuc1oSjhgY
+	5)Life cycle hooks of angular, clear understanding of it -- will cover in video
+	6)Problem solving--> should be analyze problem and find way to give solution ----need to google
+	
+Problem solving
+
+	1) find name of employee from given object whose salary is grater then 5000
+		var employee= [
+			{
+				name:'aniket',
+				sal:10000
+			},
+			{
+				name:'Pallavi',
+				sal:3000
+			},
+			{
+				name:'Yogesh',
+				sal:6000
+			},
+			......
+		]
+
+
+	
+	
