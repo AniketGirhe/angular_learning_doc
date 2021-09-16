@@ -1,5 +1,4 @@
 --angular 2+ and React JS setup process from scratch
-
 //Common Steps
 Nodejs installation
 	1) Download Nodejs from below website
@@ -10,25 +9,21 @@ Nodejs installation
 			1) node -v
 			2) npm -v
 		b) if above two command are run successfully and shows version it means your nodejs installed successfully	
-	
-	
 //Steps for angular 2+ setup
 Step 1:- Install angular CLI
 		1) refer site "https://angular.io/guide/quickstart" for installation
 		2) Then install the Angular CLI globally. using command "npm install -g @angular/cli"
-
 Step 2:- Create a new project
 		  run command "ng new my-app" (my-app is project name)
-		  
 Step 3:- Run Basic program
 			1) go to the inside project folder
 			2) run command "ng serve --open"
-
-
+			
+------------------------------------------------------------------------------------------------------------------------------------		
 //Steps for ReactJS setup
 Step 1:- To Create new reactjs application
 		run command "npx create-react-app my-app"
 		//'my-app' is project name and 'create-react-app' is tool which is used to create react application
-
 Step 2:- Go to inside project folder using cd command and run below command to run project
 			"npm start"
+------------------------------------------------------------------------------------------------------------------------------------
