@@ -68,7 +68,6 @@ Angular notes from Pragim tech.com 2021
 			2) Style will not impact other component
 		b) Disadvantages:
 			1) Application maintenance: if we have to change anything we might have to do it in multiple places
-			
 			2) It is not standard way to write style inside html pages
 	C) Style in the component html file using style tag
 	D) Specify the styles using the @component decorator "styles" property
@@ -85,16 +84,13 @@ Angular notes from Pragim tech.com 2021
 				d) <h1>{{ firstName? firstName : 'No name specified'}}</h1> 
 				e) <img src='{{imgPath}}'>
 				f) <h1>{{'Full Name='+getFullName()}}</h1>
-		2) One way data binding (from view template to component)
-		
-		3) Two way data binding (From component to view and vice-versa)
-
-			
+		2) One way data binding (from view template to component)                  	
+		3) Two way data binding (From component to view and vice-versa)			
 --------------------------------------------------------------------------------------------------------------------------------------------------
 7) What us property binding in angular?
 	A) Property binding deals with one why data binding i.e. component class property to HTML element 
 	B) To use property binding we enclose html element in square bracket []
-		e.g. <img [src]="imgPath"  class="logoStyle">
+		e.g. <img [src]="imgPath" class="logoStyle">
 	C) we can also use alternative syntax for property binding bind- prefix. This is known as canonical form
 		e.g.1) <button bind-disabled='isDisabled'>Click me</button>
 			2) <img bind-src="imgPath"  class="logoStyle">
@@ -146,7 +142,6 @@ Angular notes from Pragim tech.com 2021
 						}
 						return classes
 					}
-		
 --------------------------------------------------------------------------------------------------------------------------------------------------
 12) Style binding?
 	1) Setting single inline style using style binding
@@ -164,9 +159,16 @@ Angular notes from Pragim tech.com 2021
 					}
 --------------------------------------------------------------------------------------------------------------------------------------------------
 13) Event binding?
+	A) Below binding flow data in one direction i.e from component class property to an HTML element property
+		1) Interpolation
+		2) Property binding
+		3) Attribute binding
+		4) Class Binding
+		5) Style 
+	B) Event binding flow data in the opposite direction i.e from HTML element to a component
+		<button (click)="onClick">Click me</button>
+	C) Event binding alternative syntax(canonical form)
+		<button on-click="onClick()"></button>
+--------------------------------------------------------------------------------------------------------------------------------------------------
+14) Two way data binding?
 	
-	
-					
-		
-
- 
