@@ -144,10 +144,10 @@ Angular notes from Pragim tech.com 2021
 					}
 --------------------------------------------------------------------------------------------------------------------------------------------------
 12) Style binding?
-	1) Setting single inline style using style binding
+	1) Setting single in-line style using style binding
 		HTML: <button [style.font-weight]="isBold? 'bold' :'normal' ">Click me</button>
 		Typescript: isBold:boolean=true;
-	2) Multiple inline style using ngStyle directive
+	2) Multiple in-line style using ngStyle directive
 		HTML: <button [ngStyle]="getStyle()">Click me</button>
 		Typescript: getStyle():any{
 						let styles={
@@ -164,11 +164,10 @@ Angular notes from Pragim tech.com 2021
 		2) Property binding
 		3) Attribute binding
 		4) Class Binding
-		5) Style 
+		5) Style binding 
 	B) Event binding flow data in the opposite direction i.e from HTML element to a component
 		<button (click)="onClick">Click me</button>
 	C) Event binding alternative syntax(canonical form)
 		<button on-click="onClick()"></button>
 --------------------------------------------------------------------------------------------------------------------------------------------------
 14) Two way data binding?
-	
