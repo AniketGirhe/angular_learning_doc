@@ -2,7 +2,7 @@
 	a)Angular cli is a command line interface to scaffold and build angular apps using nodejs style (commonJs) modules.
 	b)Not only it provides you scalable project structure, instead it handles all common tedious tasks for you out of the box.
 2)Folder Structure of anngular 2 project (Default created by angular CLI)
-	
+
 2)advantages of angular 2 over angular 1
 	ans: 1)Angular 2 is completely rewritten
 		 2)Angular 2 uses typescript where angular 1 uses javascript
@@ -13,7 +13,7 @@
 		 7)Angular 2 improve dependency injection as compare to angular 1
 		 8)Angular 2 they have introduce command line interface that is Angular CLI its improve productivity and manual efforts to create project and all
 		 9)Angualr 2 have more language choices as (TypeScript,Dart,PureScript,etc).
-		 
+
 4)What is typescript (open source programing language developed by Microsoft)
 5)What is Transpilation(Transpilation compiles typescript to javascript)
 6)What are the decorators in angular
@@ -31,9 +31,9 @@
 	})
 	c)@Pipe({
 		name:"employeetitle"    //use to declare pipe
-	}) 
+	})
 	d)@Injectable()
-		
+
 6)What is component in angular 2
    component in angular is class with template and decorator. Component consist of below 3 things
    a)Template :- It defines the user interface. contains HTML,directive and data binding
@@ -46,7 +46,7 @@
 	c)Style tag in html
 	d)inside component decorator (styles property in @Component decorator)
 	e)inside component specific css file
-	
+
 8)What is interpolation(Data binding)
     1)there are three type of data binding in angular
 	    a)one way data binding(component to view data binding)
@@ -55,8 +55,8 @@
 	2)To display read-only data on a view template we use one-way data binding technique interpolation
 		<h1>{{headerValue}}</h1>
 	3)We also use interpolation to bind class property to html element property
-		e.g. set <img src="{{imgUrl}}"/> 
-		
+		e.g. set <img src="{{imgUrl}}"/>
+
 9)What are the way to write template expression (template expression we are writing in {{ }}
 		a)we can right class variable in it
 			e.g {{headername}} headername in class variable
@@ -64,7 +64,7 @@
 			e.g {{3+5}}
 		c)We can call class function as well
 			e.g {{getFullName()}} getFullName() in function which return string of full name.
-			
+
 10)Property Binding
         a)property binding also deals with one way data binding i.e component class property to HTML element property
 		b)to use property binding we enclosed html element in square bracket []
@@ -75,10 +75,10 @@
 		b)to concatenate string we must use interpolation instead of property binding this is not possible by property binding
 			e.g. <img src="http://www.pragimtech.com/{{imageUrl}}"/>
 		c)To set element property to non string data value then we should go for property binding
-			e.g. <button [disabled]="isDisabled">Click me</button> in this example if isDisabled is true then button is disabled and vice versa as well, but instead of property binding if we used interpolation this will not work because its non string value,We can also use the alternate syntax with bind- prefix. This is known as canonical form 
+			e.g. <button [disabled]="isDisabled">Click me</button> in this example if isDisabled is true then button is disabled and vice versa as well, but instead of property binding if we used interpolation this will not work because its non string value,We can also use the alternate syntax with bind- prefix. This is known as canonical form
 			<button bind-disabled='isDisabled'>Click me</button>
-			
-			
+
+
 12)Difference between HTML attribute and DOM property.
 	a)DOM stands for Document Object Model, When browser loads web page then browser creates DOM of page
 	b)if we notice in above two example it look like we are binding disabled attribute but that is not true,actually we are binding disabled property of button object.
@@ -86,17 +86,17 @@
 		a)Attributes are define by html and property are define by DOM.
 		b)Attributes initializes the DOM property.Onces initialization complete then attribute job is done
 		c)property value can change but attribute value can't
-		
+
 13)Angular attribute binding?
 	a)in our previous example interpolation and property binding that deals with binding component class property to html element property but not to attribute.
 	b)in some situation we want to bind HTML attribute e.g colspan attribute doesn't have corresponding DOM property so in this case we want to able to bind html element attribute.
 	e.g.
 		1)<th [attr.colspan]="columnSpan"> (columnSpan in class variable)
 		2)<th attr.colspan="{{columnSpan}}"> (columnSpan in class variable)
-		
+
 14)Class binding?
 	e.g.1)HTML Code
-			<button [ngClass]="classes">Click Me</button> 
+			<button [ngClass]="classes">Click Me</button>
 		.ts file code
 			applyBoldClass=true;
 			applyItalicsClass=true
@@ -106,19 +106,19 @@
               italicsClass: this.applyItalicsClass,
               colorClass:this.applyColorClass
 			};
-			
-		2)HTML Code 
+
+		2)HTML Code
 			<button [class]="ClassToApply">Click Me</button>
 		.ts file code
 		  ClassToApply:string='boldClass italicsClass colorClass'
-		
+
 		3)HTML Code
-			<button [class.colorClass]="applyColorClass">Click Me</button> 
+			<button [class.colorClass]="applyColorClass">Click Me</button>
 		.ts file code
 		  applyColorClass=false
-		  
+
 		if applyColorClass is true then .colorClass will added to button otherwise not
-		
+
 15)Style binding?
 		e.g 1)Inline styles
 			<span [style.font-weight]="'bold'">My Text value</span>
@@ -136,7 +136,7 @@
 16)What are the structural directive in angular?
 	a)ngIf
 	b)ngFor
-	
+
 17)what is event binding?
 	In following binding flows data in one direction i.e from class property to HTML element property.
 		a)interpolation
@@ -161,7 +161,7 @@
 		With these changes, reload the web page and it will work as expected.
 			So here is the syntax for using two-way data binding in Angular
 			<input [(ngModel)]='name'>
-			The square brackets on the outside are for property binding 
+			The square brackets on the outside are for property binding
 			The parentheses on the inside are for event binding
 			To easily remember this syntax, compare it to a banana in a box [()]
 
@@ -186,12 +186,12 @@
 			</tr>
 		</tbody>
 	</table>
-	
+
 20) ngFor with trackBy ?
 	1)ngFor directive my perform poorly  for large no of list
 	2)small change in list like adding new element or removing new element my trigger cascade DOM manipulation
 	3)if we will not use trackBy then when small change occur then whole table will refresh if we used trackBy then only new part of list will add, whole table will not refresh
-	
+
 	e.g html code
 	<table>
 		<thead>
@@ -265,15 +265,15 @@
 22)What is pipe in angular ?
 	1) Transform data before display
 	2) Built in pipes include lowercase, uppercase, decimal, date, percent, currency etc
-	3) To apply a pipe on a bound property use the pipe character " | " 
+	3) To apply a pipe on a bound property use the pipe character " | "
 		<td>{{employee.code | uppercase}}</td>
 	4) Pass parameters to pipe using colon " : "
 		<td>{{employee.annualSalary | currency:'USD':true:'1.3-3'}}</td>
-		
+
 23)How to create custom pipe?
 		a) html code
 			<td>{{employee.name|employeetitle:employee.gender}}</td>
-			
+
 		b).ts file code
 		import { Pipe, PipeTransform } from '@angular/core';
 
@@ -295,14 +295,14 @@
 	this property are use to share data between two component
 	 @Input property use to share data between parent to child component
 	 @Output property use to share data between child to parent component
-	 
+
 25)what are the way to share data between two component?
-	there are 4 ways to share data between two component 
+	there are 4 ways to share data between two component
 		a)Parent to Child: Sharing Data via @Input
 		b)Child to Parent: Sharing Data via @ViewChild
 		c)Child to Parent: Sharing Data via Output() and EventEmitter
 		d)Unrelated Components(siblings component): Sharing Data with a Service
-		
+
 		refer below link
 		https://angularfirebase.com/lessons/sharing-data-between-angular-components-four-methods/
 
@@ -318,19 +318,19 @@
 27)Difference between let and var keyword in typescript?
 	a)let gives you the privilege to declare variables that are limited in scope to the block, statement of expression unlike var.
 	b)var is rather a keyword which defines a variable globally regardless of block scope.
-	
+
 28)life cycle hook of angular?
 	1)Creates the component
 	2)Renders the component
 	3)Creates and renders the component children
-	4)Checks when the component data-bound properties change, and 
+	4)Checks when the component data-bound properties change, and
 	5)Destroys the component before removing it from the DOM
 
 	a)ngOnChanges()	 Executes, every time the value of an input property changes. The hook method receives a SimpleChanges object containing current and previous 	property values. This is call before ngOnInit
 	b)ngOnInit() Executes after the constructor and after ngOnChange hook for the first time. It is most commonly used for component initialisation and retrieving data from a database
 	c)ngOnDestroy() Executes just before angular destroys the component and generally used for performing cleanup
 
-		
+
 29)Digest cycle in angular?
 	Refer below link
 	https://www.youtube.com/watch?v=SYuc1oSjhgY
@@ -357,48 +357,48 @@
 					}
 				}
 				<p appHighlight>Highlight me!</p>
-		
+
 33) Difference between =, == and === in Typescript
 	= is use to assign value
 	== is use to compare value
 	=== is use to compare value and type as well
 
 34)Difference between constructor and ngOnInit
-		a)constructor: A class constructor is automatically called when an instance of the class is created. It is generally used to initialize the fields of the   class and it's sub classes. 
+		a)constructor: A class constructor is automatically called when an instance of the class is created. It is generally used to initialize the fields of the   class and it's sub classes.
 
 		b) ngOnInit is a life cycle hook method provided by Angular. ngOnInit is called after the constructor and is generally used to perform tasks related to Angular bindings. For example, ngOnInit is the right place to call a service method to fetch data from a remote server. We can also do the same using a class constructor, but the general rule of thumb is, tasks that are time consuming should use ngOnInit instead of the constructor. As fetching data from a remote server is time consuming, the better place for calling the service method is ngOnInit.
 
 35)What is watcher?
 	$watch() function provided by Angular is used to watch the changes in scope objects.
-	e.g. $scope.$watch('variable',function(newValue,oldValue){});   
+	e.g. $scope.$watch('variable',function(newValue,oldValue){});
 
 36)difference between is $apply and $digest
 	Refer below link
 	https://www.youtube.com/watch?v=3m41zdbWboE&t=577s
-	
+
 37)What is local storage, session storage,Web storage?
 	Refer below link
 	https://www.w3schools.com/htmL/html5_webstorage.asp
 38)what is Media query?
 40)Difference between splice and slice function?
 41)Difference between factory,service and providers? (Angular 1 question)
-42)What is dependency injection? 
+42)What is dependency injection?
 	Angular Injector will provide us object of service so component no need to created it if there is any changes in constructor of service then we have to change in all places where we created object with dependency injection we need to rely on angular injector for creation of object
-	
+
 42)Difference between typescript and javascript?
 	a)TypesScript is known as Object oriented programming language whereas JavaScript is a scripting language.
 	b)TypeScript has a feature known as Static typing but JavaScript does not have this feature.
 	c)TypeScript gives support for modules whereas JavaScript does not support modules.
 	d)TypeScript has Interface but JavaScript does not have Interface.
 	e)TypeScript support optional parameter function but JavaScript does not support optional parameter function
-43)Forms module in 
+43)Forms module in
 ?
 45)Difference between angular 2,4 and 5
 	a) Difference between angular 2 and 4
 		1)Some under the hood changes to reduce size of AOT (Ahead of time) compiler generated code
 		2)Angular 4 support typescript 2.1 and 2.2 compatibility where as angular 2 support typescript 1.8
 		3)Animation features are pulled out of @angular/core and move into there own package it reduce the size of production bundle if you are not using animation feature
-		4)new if/else syntax with *ngIf structural directive 
+		4)new if/else syntax with *ngIf structural directive
 	b)What is new in angular 5
 		1)Angular CLI 1.5 support
 		2)TypeScript 2.4 support in angular 5
@@ -409,22 +409,22 @@
 		5)AOT On By Default
 			Converts the code before browser downloads and run it
 		6)new HttpClient
-			remove map(res=>res.json()) calls which are no longer needed 
+			remove map(res=>res.json()) calls which are no longer needed
 		7)Changes with pipe
 			Internationalized number date and currency?
 		8)Use of exportAs to give multiple name directive
-		
+
 46)what are the String and Array function in javascript
 47)What is interceptor in Angular
 	It is use to attached security token to each http request other wise there is code duplication in project to attached token to each request
-	
+
 48)What is JIT and AOT compiler in angular
 	1) JIT(Just In Time Compilation) and AOT (Ahead of time compilation)
 	2) JIT compilation as the name implies, compiles the application just in time in the browser at run time where as AOT compiles the application at build time
 	3) for JIT compilation the browser needs to download the angular compiler where as in AOT it does not have to
 	4) While the application is being JIT Compiled in browser user have to wait, where as with AOT,application is pre-compiled so there is no such wait
 	5) With JIT Compilation the template binding error are only known at run time where as with AOT will come to know about them at build time
-	
+
 49)What is browser module in app.module.ts file
 50)MVC Architecture  in angular
 51)Main Features of angular?
@@ -437,7 +437,7 @@
 		 7)SPEED AND PERFORMANCE
 		 8)PRODUCTIVITY is more with angular framework
 		 9)Features of angular
-		 
+
 52)What is lazy loading in angular and how it is implemented?
 53)What is router guard?
 54)what is new in angular 7
@@ -448,15 +448,22 @@
 59)how to handle auth token in angular / JWT token
 
 
-60) what is component ? 
-61)data sharing technique in angular component 
+60) what is component ?
+61)data sharing technique in angular component
 62)what is javascript closure
 63)what is prototype in javascript
 64)echema script features
 65)Inheritance in angular
-66)router in angular / how to define router in angular 
+66)router in angular / how to define router in angular
 67)what is intersector in JWT token
 68)BOX model in css
 69)explain module file in angular
 70)angular tree shaking
 71)
+
+
+
+
+
+
+

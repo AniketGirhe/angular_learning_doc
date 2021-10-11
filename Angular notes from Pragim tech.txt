@@ -1,7 +1,7 @@
 Angular notes from Pragim tech.com 2021
 
 1) What is advantages of angular 2+
--- 	a) Performance: Angular 2 in 5 time faster then angular 1 
+ 	a) Performance: Angular 2 in 5 time faster then angular 1
 	b) Mobile Support: With angular 2 we can build single application that can work across mobile and desktop devices
 	c) Component base development: In angular 2, everything is component. Component are building blocks of angular application
 	d) More language choices:
@@ -20,7 +20,7 @@ Angular notes from Pragim tech.com 2021
 		4) Transpilation compiles ECMAScript 6 to ECMAScript 5 which most browser can understand
 		5) ECMAScript6 is officially known as ECMAScript 2015
 		6) New feature in ECMAScript 2015 - Classes, modules, Arrow function etc
-	
+
 	Typescript:
 		1) Free and open source programming language developed by Microsoft
 		2) It is superset of JavaScript
@@ -32,17 +32,17 @@ Angular notes from Pragim tech.com 2021
 			c) Code navigation
 			d) Advanced refactoring
 			e) Strong Typing
-			f) Support ECMAScript6 features like classes, interfaces & inheritance
+			f) Support ECMAScript6 features like classes, interfaces & inheritance etc.
 --------------------------------------------------------------------------------------------------------------------------------------------------
 3) What is component in angular 2
 	1) A component is a class with template and decorator
 	2) Component is compose for 3 thing
 		a) Template - Defines the user interface. contains HTML, directive, and data binding
 		b) Class - contains properties and method. Properties contains data for view template and method contains logic for view
-		c) Decorator - It will add meta data to the class making it an angular component 
+		c) Decorator - It will add meta data to the class making it an angular component
 	3) e.g:
 		import {Component} from '@angular/core';
-	
+
 		@Component({
 		  selector: "app-root",
 		  template: `<h1>This is {{name}}</h1>`,
@@ -55,7 +55,7 @@ Angular notes from Pragim tech.com 2021
 	1) Nested component means component inside component
 	(Will add more info later)
 --------------------------------------------------------------------------------------------------------------------------------------------------
-5) How to add styling component and what are the various way to add style to component?
+5) How to add styling to component and what are the various way to it?
 	A) Inside external style sheet:style.css
 		a) Advantages:
 			1) Editor intelligence and auto formating of css code
@@ -80,15 +80,15 @@ Angular notes from Pragim tech.com 2021
 			Example
 				a) <h1>{{firstName}}</h1> //firstName is a property in component
 				b) <h1>{{'Name = '+ name }}</h1>  //name is a property in component
-				c) <h1>{{ 10+20+30 }}</h1> 
-				d) <h1>{{ firstName? firstName : 'No name specified'}}</h1> 
+				c) <h1>{{ 10+20+30 }}</h1>
+				d) <h1>{{ firstName? firstName : 'No name specified'}}</h1>
 				e) <img src='{{imgPath}}'>
 				f) <h1>{{'Full Name='+getFullName()}}</h1>
-		2) One way data binding (from view template to component)                  	
-		3) Two way data binding (From component to view and vice-versa)			
+		2) One way data binding (from view template to component)
+		3) Two way data binding (From component to view and vice-versa)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 7) What us property binding in angular?
-	A) Property binding deals with one why data binding i.e. component class property to HTML element 
+	A) Property binding deals with one why data binding i.e. from component class property to HTML element
 	B) To use property binding we enclose html element in square bracket []
 		e.g. <img [src]="imgPath" class="logoStyle">
 	C) we can also use alternative syntax for property binding bind- prefix. This is known as canonical form
@@ -107,7 +107,7 @@ Angular notes from Pragim tech.com 2021
 	2) Attribute are defined by HTML and property are defined by DOM
 	3) Attribute initialize DOM properties. Once initialization done then attribute job is done
 	4) Property value can change, where attribute can't
-	
+
 	Note: 1) HTML attribute and dom property are different thing
 		  2) Angular binding work with properties and event, and not with attribute
 --------------------------------------------------------------------------------------------------------------------------------------------------
@@ -116,7 +116,7 @@ Angular notes from Pragim tech.com 2021
 	2) But not all HTML element attribute having it's corresponding DOM property. For example colspan attribute does not have its corresponding dom property
 	3) In situation like this we want to be able to bind to HTML element attribute
 	4) Hence angular provide attribute binding
-		e.g. 
+		e.g.
 			<th [attr.colspan]="columnSpan">{{tableHeader}}</th>
 			alternate to above is
 			<th attr.colspan="{{columnSpan}}">{{tableHeader}}</th>
@@ -153,7 +153,7 @@ Angular notes from Pragim tech.com 2021
 						let styles={
 							'font-size':'30px',
 							'font-weight':'bold',
-							'font-style': 'italic' 
+							'font-style': 'italic'
 						}
 						return styles;
 					}
@@ -163,11 +163,204 @@ Angular notes from Pragim tech.com 2021
 		1) Interpolation
 		2) Property binding
 		3) Attribute binding
-		4) Class Binding
-		5) Style binding 
+		4) Class binding
+		5) Style binding
 	B) Event binding flow data in the opposite direction i.e from HTML element to a component
 		<button (click)="onClick">Click me</button>
 	C) Event binding alternative syntax(canonical form)
 		<button on-click="onClick()"></button>
 --------------------------------------------------------------------------------------------------------------------------------------------------
 14) Two way data binding?
+	a) Two way data binding in angular is combination of both event binding and property binding
+	b) Syntax for using two way data binding is
+		<input type="text" [(ngModel)]="name"> (remember to include FormsModule in module.ts file)
+	c) The square bracket on the outside are for property binding 
+	d) The parentheses on the inside are for event binding
+--------------------------------------------------------------------------------------------------------------------------------------------------
+15) What are the structural directive are in angular?
+	a) *ngIf="" 
+	b) *ngFor"" using for looping through array
+	
+--------------------------------------------------------------------------------------------------------------------------------------------------
+16) *ngFor directive?
+	a) *ngFor directive is use to loop through array
+	b) Syntax:  <tr *ngFor="let employee of employeeDetails"> here employeeDetails is a array
+	c) e.g. 
+		<table>
+			<thead>
+				<th>Name</th>
+				<th>Surname</th>
+				<th>Gender</th>
+				<th>DOB</th>
+				<th>Salary</th>
+			</thead>
+			<tbody>
+				<tr *ngFor="let employee of employeeDetails">
+					<td>{{employee.name}}</td>
+					<td>{{employee.surname}}</td>
+					<td>{{employee.gender}}</td>
+					<td>{{employee.dob}}</td>
+					<td>{{employee.salary}}</td>
+				</tr>
+				<tr *ngIf="!employeeDetails || employeeDetails.length==0">
+					<td colspan="5">No Employees to display</td>
+				</tr>
+			</tbody>
+		</table>
+--------------------------------------------------------------------------------------------------------------------------------------------------
+17) *ngFor with trackBy	option?
+	a) ngFor directive may perform poor for large no of list
+	b) Small change in list like adding or removing new row may trigger cascade DOM manipulation
+	c) If we not use trackBy option and if any small change occur then whole table will refresh & if we use trackBy, only new part of list will add/remove it will not refresh complete table
+	e.g html code
+		<table>
+			<thead>
+				<th>Index</th>
+				<th>Code</th>
+				<th>Name</th>
+				<th>Gender</th>
+				<th>Salary</th>
+				<th>Date Of Birth</th>
+			</thead>
+			<tbody>
+				<tr *ngFor="let employee of employees;trackBy:trackByValue">
+				  <td>{{i+1}}</td>
+				  <td>{{employee.code}}</td>
+				  <td>{{employee.name}}</td>
+				  <td>{{employee.gender}}</td>
+				  <td>{{employee.annualSalary}}</td>
+				  <td>{{employee.dateOfBirth}}</td>
+				 </tr>
+			</tbody>
+		</table>
+		<button (click)="refreshEmployee()">Refresh Employee</button>
+
+	//.ts file component code
+
+	 refreshEmployee(): void {
+		this.employees = [
+		  { code: 'emp101', name: 'Tom', gender: 'Male', annualSalary: 5500, dateOfBirth: '25/6/1988' },
+		  { code: 'emp102', name: 'Alex', gender: 'Male', annualSalary: 5700.95, dateOfBirth: '9/6/1982' },
+		  { code: 'emp103', name: 'Mike', gender: 'Male', annualSalary: 5900, dateOfBirth: '12/8/1979' },
+		  { code: 'emp104', name: 'Mary', gender: 'Female', annualSalary: 6500.826, dateOfBirth: '14/10/1980' },
+		  { code: 'emp105', name: 'Aniket', gender: 'Male', annualSalary: 100.826, dateOfBirth: '05/01/1992' }
+		];
+	  }
+
+	trackByValue(index:number,employee:any){
+		return employee.code;
+	}
+--------------------------------------------------------------------------------------------------------------------------------------------------
+18)How to find first,last,odd,even element fro list while iterating?
+	e.g.
+		<table>
+		  <thead>
+			<th>Index</th>
+			<th>Code</th>
+			<th>Name</th>
+			<th>Gender</th>
+			<th>Salary</th>
+			<th>Date Of Birth</th>
+			<th>First</th>
+			<th>Last</th>
+			<th>Odd</th>
+			<th>Even</th>
+		  </thead>
+		  <tbody>
+			<tr *ngFor="let employee of employees;trackBy:trackByValue;let i=index;let isFirst=first;let isLast=last;let isodd=odd;let isEven=even;">
+			  <td>{{i+1}}</td>
+			  <td>{{employee.code}}</td>
+			  <td>{{employee.name}}</td>
+			  <td>{{employee.gender}}</td>
+			  <td>{{employee.annualSalary}}</td>
+			  <td>{{employee.dateOfBirth}}</td>
+			  <td>{{isFirst}}</td>
+			  <td>{{isLast}}</td>
+			  <td>{{isodd}}</td>
+			  <td>{{isEven}}</td>
+			</tr>
+		  </tbody>
+		</table>
+--------------------------------------------------------------------------------------------------------------------------------------------------
+19) What is pipes?
+	a) Pipe will transform data before display it
+	b) Build in pipe are "lowercase,uppercase,date,currency,decimal,percent,etc"
+	c) To apply pipe on bound property use the pipe "|" character
+	d) We can also use chain pipe
+		<td>{{employee.dob|date|uppercase}}</td>
+	d) e.g.
+		<td>{{employee.id|uppercase}}</td>
+		<td>{{employee.dob|date:"dd/MM/yy"}}</td>
+		<td>{{employee.salary|currency:"USD":true:"1.3-3"}}</td>
+--------------------------------------------------------------------------------------------------------------------------------------------------
+20) Custom Pipe?
+	HTML Code: 
+		<td>{{employee.name|employeeTitlePipe:employee.gender}}</td>
+	Pipe file code:
+		import { Pipe, PipeTransform } from '@angular/core';
+		@Pipe({
+		  name: 'employeeTitlePipe'
+		})
+		export class EmployeeTitlePipePipe implements PipeTransform {
+
+		  transform(value: any, gender: string): string {
+			if (gender.toLowerCase() == "male") {
+			  return "Mr. " + value;
+			} else {
+			  return "Miss. " + value;
+			}
+		  }
+		}
+--------------------------------------------------------------------------------------------------------------------------------------------------
+21) What is use of various equal-to(=) operator in angular
+	= assign value
+	== compare two value
+	=== compare two value and their type
+--------------------------------------------------------------------------------------------------------------------------------------------------
+22) Create custom events in angular?
+	a) Creating event (In child component)
+		HTML Code:
+			<input type="radio" name="options" value="all" (change)="onRadioButtonSelectionChange()" [(ngModel)]="selectRadioButtonValue"><span class="radioClass"  >{{"ALL("+all+")"}}</span>
+			
+		TS file code:
+			//Event initialization
+			@Output()
+			countRadioButtonSelectionChanged:EventEmitter<string>=new EventEmitter<string>();
+			
+			 //This method will trigger event when radio button selected
+			onRadioButtonSelectionChange(){
+				this.countRadioButtonSelectionChanged.emit(this.selectRadioButtonValue)
+			}
+	b) Using custom events (In parent component)
+		HTML Code:
+			<app-employee-count (countRadioButtonSelectionChanged)="onRadioButtonChange($event)"></app-employee-count>
+		TS file code:
+			onRadioButtonChange(selectedGender:string){
+				this.selectedEmployeeCountRadioButton=selectedGender
+			}
+--------------------------------------------------------------------------------------------------------------------------------------------------
+23) Use of ng-container directive?
+	a) The ng-container directive provides us with an element that we can attach a structural directive to a section of the page, without having to create an extra element just for that.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+24) What is interfaces in angular?
+	a) Use interface keyword to declare interface
+	b) It is best practice to prefix 'I' before interface name
+	c) Interface members are public by default & does not required explicit access modifier
+	d) A class that implements an interface must provide implementation for all interface member unless members are marked as optional using ? operator
+	e) Use implements keyword to make class implement interface
+	f) Typescript interface are exist for developer convenience and not use by angular at runtime. During transpilation, no javascript code is generated for interface. It is only use by typescript for type checking during development
+	g) To reduce the amount o code you have to write consider using short-hand syntax to initialize class properties with constructor parameter
+		e.g constructor(public id: string, public name: string, public surname: string, public salary: number) { }
+	h) e.g.
+			export interface IEmployee {
+				id: string;
+				name: string;
+				surname: string;
+				salary: number;
+				department?: string; //This is optional property
+
+				getMonthlySalary(annualSalary: number): number;
+			}
+--------------------------------------------------------------------------------------------------------------------------------------------------
+25) Life-cycle hook of angular?
+	
